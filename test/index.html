@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>mMask Test</title>
+        <script src="/main.js"></script>
+    </head>
+    <body>
+    <style>
+        div{
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            background: #83cdb1;
+        }
+        pre{
+            padding: 5px;
+            position: relative;
+            background: #eee;
+            border: 1px solid #949494;
+            margin-bottom: 25px;
+        }
+        pre:before{
+            position: absolute;
+            top: -18px;
+            left: -1px;
+            color: #575757;
+            background: #eee;
+            border-radius: 5px 5px 0 0;
+            padding: 1px 5px;
+            border: 1px solid #949494;
+            border-bottom: 0;
+        }
+        pre[html]:before{
+            content: 'html';
+        }
+        pre[js]:before{
+            content: 'js';
+        }
+    </style>
+    <div>
+        <pre html>&lt;input class=&quot;mMask&quot;/&gt;</pre>
+        <label>
+            <input class="mMask"/>
+        </label>
+    </div>
+    <div>
+        <pre html>&lt;input class=&quot;someInput&quot;/&gt;</pre>
+        <pre js>&lt;input class=&quot;someInput&quot;/&gt;</pre>
+        <label>
+            <input id="someInput"/>
+        </label>
+        <script>mMask.init(document.getElementById("someInput"));</script>
+    </div>
+    </body>
+    
+</html>
